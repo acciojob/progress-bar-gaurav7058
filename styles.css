@@ -1,1 +1,59 @@
 /*  your css code here. If applicable */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.circle.active {
+    background-color: #3498db;
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 20px;
+    height: 4px;
+    background-color: #ddd;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.circle.active::after {
+    background-color: #3498db;
+}
+
+.circle:last-child::after {
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
